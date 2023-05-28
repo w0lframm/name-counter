@@ -1,11 +1,15 @@
 package main
 
 import (
-	//"name-counter/cli"
-	"name-counter/reader-counter"
+	"fmt"
+	"name-counter/cli"
+	"os"
 )
 
 func main() {
-	//cli.Start()
-	reader_counter.ReadAndCount("C:\\Tmp\\name_counter\\names\\names.txt")
+	err := clicounter.Start()
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 }
